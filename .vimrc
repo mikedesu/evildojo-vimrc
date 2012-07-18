@@ -1,12 +1,11 @@
 " This is Mike Bell's .vimrc file
 call pathogen#infect()
 
+" this is some magic for Command-T file navigation
 let mapleader = "`"
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
-
 map <leader>w :CommandTFlush<cr>\|:CommandT<cr>
 map <leader>e :CommandTFlush<cr>\|:CommandT %%<cr>
-
 nnoremap <leader><leader> <c-^>
 
 " Return key un-highlights searches
@@ -14,7 +13,8 @@ nnoremap <leader><leader> <c-^>
 
 "set t_Co=256
 set background=dark
-color solarized
+"color solarized
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " BASIC EDITING CONFIGURATION
@@ -54,7 +54,7 @@ set ignorecase smartcase
 
 " highlights cursor line - looks like shit...keep off until figure out color
 " scheme
-set cursorline
+" set cursorline
 
 set cmdheight=2
 set switchbuf=useopen
@@ -78,19 +78,14 @@ set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
+" List open buffers and prompt for one to switch to
+map <leader>b :buffers<CR>:buffer<Space>
 
 " Enable file type detection
 " Use the default filetype settings, so that mail gets 'tw' set to 72,
 " 'cindent' is on in C files, etc.
 " Also load indent files, to automatically do language-dependent indenting.
 filetype plugin indent on
-
-" use emacs-style tab completion when selecting files, etc
-" set wildmode=longest,list
-
-" make tab completion for files/buffers act like bash
-"set wildmenu
-"let mapleader=","
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CUSTOM AUTOCMDS
@@ -135,7 +130,6 @@ function! RenameFile()
     endif
 endfunction
 map <leader>n :call RenameFile()<cr>
-
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Direction Key Remaps
