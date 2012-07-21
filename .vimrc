@@ -11,9 +11,15 @@ nnoremap <leader><leader> <c-^>
 " Return key un-highlights searches
 :nnoremap <CR> :nohlsearch<cr>
 
-"set t_Co=256
+" Remaps page up/down
+":nnoremap <c-[> <c-d>
+":nnoremap <c-p> <c-b>
+
+
+set t_Co=256
 set background=dark
-"color solarized
+"let g:solarized_termcolors=256
+colorscheme solarized
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -54,7 +60,7 @@ set ignorecase smartcase
 
 " highlights cursor line - looks like shit...keep off until figure out color
 " scheme
-" set cursorline
+set cursorline
 
 set cmdheight=2
 set switchbuf=useopen
@@ -153,4 +159,17 @@ map <Left> :echo "no!"<cr>
 map <Right> :echo "no!"<cr>
 map <Up> :echo "no!"<cr>
 map <Down> :echo "no!"<cr>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Function to open Chrome and search
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! Terms()
+    call inputsave()
+    let searchterm = input('Search: ')
+    call inputrestore()
+    return searchterm
+endfunction
+map <leader>g :! /usr/bin/open -a "/Applications/Google Chrome.app" 'https://google.com/search?q=<C-R>=Terms()<CR>'<CR><CR>
+
+
 
