@@ -19,7 +19,8 @@ nnoremap <leader><leader> <c-^>
 set t_Co=256
 set background=dark
 "let g:solarized_termcolors=256
-colorscheme solarized
+"colorscheme solarized
+colorscheme lucius
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -29,6 +30,11 @@ set nocompatible
 
 " display incomplete commands
 set showcmd
+
+" for POET-lang
+au BufRead,BufNewFile *.code set filetype=poet
+au BufRead,BufNewFile *.pt set filetype=poet
+au! Syntax poet source ~/.vim/bundle/poet.vim
 syntax on
 
 " allow unsaved background buffers and remember marks/undo for them
