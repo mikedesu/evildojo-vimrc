@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =4
 let g:netrw_dirhist_1='/Users/Mike/.vim'
 let g:netrw_dirhist_2='/Users/Mike/Documents/source-control/evildojo-mikebot'
 let g:netrw_dirhist_3='/Users/Mike/Documents/source-control/evildojo-tw'
+let g:netrw_dirhist_4='/Users/Mike/Dropbox2/Dropbox/GG365 Special/Mike's Folder/Gifting-Final/Gifting-Final/libs/cocos2d'

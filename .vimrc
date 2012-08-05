@@ -21,7 +21,8 @@ set background=dark
 "let g:solarized_termcolors=256
 "colorscheme solarized
 colorscheme lucius
-
+"colorscheme gardener
+"colorscheme jellybeans
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " BASIC EDITING CONFIGURATION
