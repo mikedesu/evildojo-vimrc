@@ -19,8 +19,8 @@ nnoremap <leader><leader> <c-^>
 set t_Co=256
 set background=dark
 "let g:solarized_termcolors=256
-"colorscheme solarized
-colorscheme lucius
+colorscheme solarized
+"colorscheme lucius
 "colorscheme gardener
 "colorscheme jellybeans
 
