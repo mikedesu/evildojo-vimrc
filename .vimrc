@@ -11,18 +11,14 @@ nnoremap <leader><leader> <c-^>
 " Return key un-highlights searches
 :nnoremap <CR> :nohlsearch<cr>
 
-" Remaps page up/down
-":nnoremap <c-[> <c-d>
-":nnoremap <c-p> <c-b>
-
-
 set t_Co=256
-set background=dark
+"set background=dark
 "let g:solarized_termcolors=256
-colorscheme solarized
-"colorscheme lucius
-"colorscheme gardener
-"colorscheme jellybeans
+colorscheme lucius
+
+syntax on
+
+set ttyfast
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " BASIC EDITING CONFIGURATION
@@ -31,12 +27,6 @@ set nocompatible
 
 " display incomplete commands
 set showcmd
-
-" for POET-lang
-au BufRead,BufNewFile *.code set filetype=poet
-au BufRead,BufNewFile *.pt set filetype=poet
-au! Syntax poet source ~/.vim/bundle/poet.vim
-syntax on
 
 " allow unsaved background buffers and remember marks/undo for them
 set hidden
@@ -65,8 +55,7 @@ set smartindent
 " makes searches case-sensitive only if they contain upper-case characters
 set ignorecase smartcase
 
-" highlights cursor line - looks like shit...keep off until figure out color
-" scheme
+" highlights cursor line
 set cursorline
 
 set cmdheight=2
@@ -129,7 +118,6 @@ endfunction
 inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 inoremap <s-tab> <c-n>
 
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " RENAME CURRENT FILE 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -178,14 +166,12 @@ function! Terms()
 endfunction
 map <leader>g :! /usr/bin/open -a "/Applications/Google Chrome.app" 'https://google.com/search?q=<C-R>=Terms()<CR>'<CR><CR>
 
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Open .vimrc faster, reload .vimrc faster
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 nmap <leader>sv :so ~/.vimrc<CR>
 nmap <leader>ev :e ~/.vimrc<CR>
-
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Hex editing stuff
@@ -259,5 +245,4 @@ if has ("autocmd")
             \ endif
     augroup END
 endif
-
 
